@@ -1,16 +1,6 @@
-# route
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Первый экран
+![image](https://github.com/LiliaLuSol/flutter/assets/116663842/4cc960ab-a315-452f-ab71-dc3159fbe200)
+Второй экран
+![image](https://github.com/LiliaLuSol/flutter/assets/116663842/a8565f04-adfb-4413-af27-520bdb1a9b56)
+Третий экран
+![image](https://github.com/LiliaLuSol/flutter/assets/116663842/9ebc856f-fb52-40ab-8a9b-379814c2ec30)
