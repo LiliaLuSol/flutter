@@ -7,6 +7,7 @@ class first_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         padding: const EdgeInsets.all(8),
         child: Center(
@@ -26,16 +27,16 @@ class first_page extends StatelessWidget {
                 ],
               ),
               const SizedBox(width: 8),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height / 3,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     "Анализы",
                     style: TextStyle(color: Colors.green, fontSize: 20),
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width * 1.7 / 3,
                     child: const Text(
                       "Экспресс сбор и получение проб",
@@ -49,7 +50,7 @@ class first_page extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     width: 70,
                   ),
                   ElevatedButton(
@@ -67,7 +68,7 @@ class first_page extends StatelessWidget {
                 ],),
               ),
               const SizedBox(width: 8),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height / 3,
                 child: Image.asset("assets/images/Illustration.png",
                     fit: BoxFit.contain),

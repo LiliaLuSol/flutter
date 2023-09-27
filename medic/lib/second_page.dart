@@ -8,8 +8,9 @@ class second_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -29,7 +30,7 @@ class second_page extends StatelessWidget {
                   Image.asset("assets/images/shape.png"),
                 ],
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Container(
                 height: MediaQuery.of(context).size.height / 3,
                 child: Column(
@@ -39,7 +40,7 @@ class second_page extends StatelessWidget {
                       "Уведомления",
                       style: TextStyle(color: Colors.green, fontSize: 20),
                     ),
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 1.7 / 3,
                       child: const Text(
                         "Вы быстро узнаете о результатах",
@@ -48,7 +49,7 @@ class second_page extends StatelessWidget {
                         softWrap: true,
                       ),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
@@ -76,8 +77,8 @@ class second_page extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(width: 8),
-              Container(
+              const SizedBox(width: 8),
+              SizedBox(
                 height: MediaQuery.of(context).size.height / 3,
                 child: Image.asset(
                     "assets/images/Снимок экрана 2022-09-17 в 19.21 1.png",
