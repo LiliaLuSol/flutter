@@ -1,16 +1,5 @@
-# lab1
+# На телефоне
+![image](https://github.com/LiliaLuSol/flutter/assets/116663842/a38d3229-0a6f-41e8-aa76-f5567ffd3bb2)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# На планшете
+![image](https://github.com/LiliaLuSol/flutter/assets/116663842/6f345ba0-0521-49d2-8c0a-488ca0bc1790)
