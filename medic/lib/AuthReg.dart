@@ -20,7 +20,7 @@ class FourthPageAuState extends State<fourth_page_au> {
       resizeToAvoidBottomInset: false,
       body: Center(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 32.0),
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -81,7 +81,7 @@ class FourthPageAuState extends State<fourth_page_au> {
                       height: 4.0,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width - 64,
+                      width: MediaQuery.of(context).size.width - 40,
                       height: 56,
                       decoration: BoxDecoration(
                         color: const Color.fromRGBO(245, 245, 249, 1),
@@ -114,7 +114,7 @@ class FourthPageAuState extends State<fourth_page_au> {
                       height: 27,
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width - 64,
+                      width: MediaQuery.of(context).size.width - 40,
                       height: 56,
                       child: ElevatedButton(
                         // onPressed: () {
@@ -163,7 +163,7 @@ class FourthPageAuState extends State<fourth_page_au> {
                       height: 15,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width - 64,
+                      width: MediaQuery.of(context).size.width - 40,
                       height: 60,
                       color: Colors.white,
                       child: OutlinedButton(

@@ -1,75 +1,75 @@
 import 'package:flutter/material.dart';
+import 'package:route/AuthReg.dart';
+import 'package:route/CreatingPassword.dart';
 
-class fifth_page_code extends StatelessWidget {
-  const fifth_page_code({super.key});
+// class fifth_page_code extends StatelessWidget {
+//   const fifth_page_code({super.key});
+
+class fifth_page_code extends StatefulWidget {
+  const fifth_page_code({Key? key}) : super(key: key);
+
+  @override
+  FifthPageCodeState createState() => FifthPageCodeState();
+}
+
+class FifthPageCodeState extends State<fifth_page_code> {
+  int countdown = 60;
+
+  void startCountdown() {
+    Future.delayed(const Duration(seconds: 1), () {
+      if (countdown > 0) {
+        setState(() {
+          countdown--;
+        });
+        startCountdown();
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const fourth_page_au()),
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/images/Back.png',
+                    width: 32,
+                    height: 32,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 132),
+            const Text(
               'Введите код из E-mail',
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                CodeInputBox(),
-                CodeInputBox(),
-                CodeInputBox(),
-                CodeInputBox(),
-              ],
-            ),
-            SizedBox(height: 20),
-            Container(
-              alignment: Alignment.bottomCenter,
-              height: MediaQuery.of(context).size.height / 3,
-              padding: EdgeInsets.all(8),
-              color: Color.fromRGBO(209, 213, 219, 1),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      NumberButton(1),
-                      NumberButton(2),
-                      NumberButton(3),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      NumberButton(4),
-                      NumberButton(5),
-                      NumberButton(6),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      NumberButton(7),
-                      NumberButton(8),
-                      NumberButton(9),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      NumberButton(0),
-                      NumberButton(Icon(Icons.backspace)),
-                    ],
-                  ),
-                ],
-              ),
+            const SizedBox(height: 24),
+            CodeInput(),
+            const SizedBox(height: 16),
+            Text(
+              'Отправить код повторно можно будет через $countdown секунд',
+              style: const TextStyle(
+                  fontSize: 15, color: Color.fromRGBO(147, 147, 150, 1)),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -78,48 +78,73 @@ class fifth_page_code extends StatelessWidget {
   }
 }
 
-class CodeInputBox extends StatelessWidget {
+class CodeInput extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 20,
-      height: 20,
-      margin: EdgeInsets.symmetric(horizontal: 8),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.circular(5),
-      ),
-      alignment: Alignment.center,
-      child: Text(
-        '', // Здесь может быть цифра, которую вводит пользователь
-        style: TextStyle(fontSize: 20),
-      ),
-    );
-  }
+  _CodeInputState createState() => _CodeInputState();
 }
-class NumberButton extends StatelessWidget {
-  final dynamic content;
 
-  NumberButton(this.content);
+class _CodeInputState extends State<CodeInput> {
+  List<TextEditingController> controllers = List.generate(
+    4,
+    (index) => TextEditingController(),
+  );
+
+  String combinedText = '';
+
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < controllers.length; i++) {
+      controllers[i].addListener(() {
+        setState(() {
+          combinedText =
+              controllers.map((controller) => controller.text).join();
+        });
+        if (combinedText.length == 4) {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const sixth_page_password()));
+        }
+      });
+    }
+  }
+
+  void moveToNextField(int currentIndex) {
+    if (currentIndex < controllers.length - 1) {
+      FocusScope.of(context).nextFocus();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width / 3 - 32,
-      height: 30,
-      child: ElevatedButton(
-        onPressed: () {
-          // Действие при нажатии кнопки
-        },
-        child: content is int
-            ? Text(
-          content.toString(),
-          style: TextStyle(fontSize: 24),
-        )
-            : content is Widget
-            ? content
-            : SizedBox.shrink(),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        for (int i = 0; i < 4; i++)
+          Container(
+            width: 48,
+            height: 48,
+            margin: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: const Color.fromRGBO(235, 235, 235, 1)),
+              color: const Color.fromRGBO(245, 245, 249, 1),
+            ),
+            child: TextField(
+                controller: controllers[i],
+                textAlign: TextAlign.center,
+                keyboardType: TextInputType.number,
+                maxLength: 1,
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                decoration: const InputDecoration(
+                  counterText: "",
+                  border: InputBorder.none,
+                ),
+                onChanged: (_) {
+                  moveToNextField(i);
+                }),
+          ),
+      ],
     );
   }
 }
