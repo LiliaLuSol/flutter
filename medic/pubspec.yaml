@@ -63,6 +63,9 @@ flutter:
      - assets/images/130 1.png
      - assets/images/Illustration.png
      - assets/images/Снимок экрана 2022-09-17 в 19.21 1.png
+     - assets/images/hello.png
+     - assets/images/Back.png
+     - assets/images/DEL ICON.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

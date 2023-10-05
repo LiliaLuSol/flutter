@@ -102,7 +102,7 @@ class _CodeInputState extends State<CodeInput> {
         });
         if (combinedText.length == 4) {
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const sixth_page_password()));
+              builder: (context) =>  sixth_page_password()));
         }
       });
     }
