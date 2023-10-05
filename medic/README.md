@@ -37,3 +37,9 @@
 ![image](https://github.com/LiliaLuSol/flutter/assets/116663842/e7ce58d8-5b05-461b-b9bd-595872e65f32)
 
 # Седьмой экран
+
+![image](https://github.com/LiliaLuSol/flutter/assets/116663842/7cfe312e-0ffe-4ed9-a559-66ae2bee7454)
+
+Заполненные необходимые для продолжения поля, если хоть одно поле не будет запонено, кнопка будет недоступна
+
+![image](https://github.com/LiliaLuSol/flutter/assets/116663842/38203e2a-821b-44d0-9388-d7e1549815d0)
